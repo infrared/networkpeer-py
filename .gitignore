@@ -1,0 +1,14 @@
+.DS_Store
+public/gen
+ops/
+ENV/
+*.lock
+test.py
+*.swp
+*.out
+*.pyc
+env-local.rc
+node_modules/
+logs/*
+uploads/*
+*ops/
