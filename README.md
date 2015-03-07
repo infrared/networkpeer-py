@@ -95,9 +95,8 @@ create_content(view="simple",name="super-page",markdown=markdown)
 
  np.create_content(view="simple",name="page-three",markdown=page_three)
 
- # add update the URL to include page-three
- 
- np.create_url(url="/foobar",content=["page-one","page-two","page-three"], end="/")
+ #  update the URL to include page-three
+ np.update_url(url="/foobar",content=["page-one","page-two","page-three"], end="/")
 ```
 #License
 ----
