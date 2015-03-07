@@ -79,3 +79,13 @@ class NetworkPeer(object):
         if r.status_code == "403":
             print "Unauthorized, or invalid credentials"
         print(r.text)
+
+    def create_content(self,**kwargs):
+
+        view = kwargs.pop('view')
+
+
+        r = requests.post(self.host + '/builder/create/content/' + view, json=kwargs,auth=(self.username,self.password))
+        if r.status_code == "403":
+              print "Unauthorized, or invalid credentials"
+        print(r.text)          
