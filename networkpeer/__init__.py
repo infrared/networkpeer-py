@@ -81,6 +81,20 @@ class NetworkPeer(object):
         print(r.text)
 
     def create_content(self,**kwargs):
+        """Create content
+        
+        Syntax:
+            create_content(**kwargs)
+       
+        args:
+            view (str)
+            name (str)
+            markdown or body (str)
+
+        Example:
+            markdown="### Super Page!###
+            create_content(view="simple",name="super-page",markdown=markdown)
+       """ 
 
         view = kwargs.pop('view')
 

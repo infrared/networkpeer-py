@@ -11,7 +11,6 @@ python library for networkpeer.com
  password = "yourpassword"
  
  np = NetworkPeer(host=host,username=username,password=password)
- np.test()
 ```
 
 # URL
@@ -51,6 +50,55 @@ parameters:
 np.get_url(url="/foo")
 ```
 
+##### create_content(**kwargs)
+Create content
+
+parameters:
+
+* **view** - The view to use
+* **nama** - unique name for the content
+* **markdown** or **body** - markdown or body content
+
+```python
+markdown="### Super Page!###
+create_content(view="simple",name="super-page",markdown=markdown)
+```
+
+# Full Example
+
+```python
+ from networkpeer import NetworkPeer
+
+ host = 'https://www.networkpeer.com'
+ username = "youraccount"
+ password = "yourpassword"
+
+ np = NetworkPeer(host=host,username=username,password=password)
+
+ np.create_url(url="/foobar",content=["page-one","page-two"], end="/")
+ 
+ page_one="""### Page One
+ this is awesome
+ **markdown rocks**
+ """
+ page_two="""### Wow Page Two!
+ another page that does something
+ """
+
+
+ np.create_content(view="simple",name="page-one",markdown=page_one)
+ np.create_content(view="simple",name="page-two",markdown=page_two)
+
+ page_three="""### Here's page three
+ blah blah blah
+ """
+
+ np.create_content(view="simple",name="page-three",markdown=page_three)
+
+ # add update the URL to include page-three
+ 
+ np.create_url(url="/foobar",content=["page-one","page-two","page-three"], end="/")
+```
 #License
 ----
 
